@@ -11,7 +11,7 @@ class Siswa_model extends Model
 
     function getSiswaById($id)
     {
-        $this->stmt = $this->dbh->prepare("SELECT siswa.*, kelas.nmKelas as kelas FROM siswa LEFT JOIN kelas ON siswa.idKelas = kelas.idKelas WHERE idSiswa = ?");
+        $this->stmt = $this->dbh->prepare("SELECT siswa.*, jurusan.nmJurusan as jurusan FROM siswa LEFT JOIN jurusan ON siswa.idJurusan = jurusan.idJurusan WHERE idSiswa = ?");
         $this->stmt->execute([$id]);
         return $this->single();
     }

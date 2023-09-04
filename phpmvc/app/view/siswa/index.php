@@ -85,6 +85,11 @@
                 xhttp.open("POST", "<?= BASE_URL ?>/siswa/getUbah", true);
                 xhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
                 xhttp.send("id=" + this.dataset.id);
+            } else {
+                nama.value = '';
+                jenis_kelamin.value = '';
+                alamat.value = '';
+                id.value = '';
             }
 
             document.querySelector("#formModalLabel").innerHTML = label;
